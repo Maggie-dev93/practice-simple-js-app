@@ -123,23 +123,27 @@ button.dataset.toggle = "modal";
 
   function showDetails(item) {
     pokemonRepository.loadDetails(item).then(function () {
-        showModal(item.name, item.height, item.weight, item.imageUrl);
+        showModal(item);
     });
   }
 
-function showModal(itemName, itemHeight, itemWeight, itemImageUrl) {
-  let modalBody = document.querySelectorAll(".modal-Body");
-  let modalTitle = document.querySelectorAll(".modal-title");
-  let modalHeader = document.querySelectorAll(".modal-header");
+function showModal(item) {
+  let modalBody = document.querySelector(".modal-body");
+  let modalTitle = document.querySelector(".modal-title");
+  let modalHeader = document.querySelector(".modal-header");
   //clear exisiting content of the modal
   //modalHeader.empty();
-  modalTitle.innerHtml = "";
-  modalBody.innerHtml = "";
+  modalTitle.innerText = "";
+  modalBody.innerText = "";
 
   //creating element for name in modal content
-  let nameElement = document.createElement("<h1>" + itemName + "</h1>");
+  let nameElement = document.createElement("h1");
+  nameElement.innerText = item.Name;
   //creating img in modal content
-  let imageElementFront = document.createElement('<img class="modal-img" style="width50%" src=' + itemImageUrl + '>');
+  let imageElementFront = document.createElement("img"); 
+  imageElementFront.className = "modal-img";
+  imageElementFront.style = "width 50%"
+  imageElementFront.src = item.imageUrl
   //create element for height in modal content
   let heightElement = document.createElement("<p>" + "height : " + itemHeight +"</p>");
   //create element for weight in modal cotent
