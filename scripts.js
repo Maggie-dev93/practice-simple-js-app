@@ -138,7 +138,7 @@ function showModal(item) {
 
   //creating element for name in modal content
   let nameElement = document.createElement("h1");
-  nameElement.innerText = item.Name;
+  nameElement.innerText = item.name;
   //creating img in modal content
   let imageElementFront = document.createElement("img"); 
   imageElementFront.className = "modal-img";
