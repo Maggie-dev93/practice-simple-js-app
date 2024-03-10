@@ -145,11 +145,14 @@ function showModal(item) {
   imageElementFront.style = "width 50%"
   imageElementFront.src = item.imageUrl
   //create element for height in modal content
-  let heightElement = document.createElement("<p>" + "height : " + itemHeight +"</p>");
+  let heightElement = document.createElement("p");
+  heightElement.innerText = "height: " + item.height;
   //create element for weight in modal cotent
-  let weightElement = document.createElement("<p>" + "weight : " + itemWeight +"</p>");
+  let weightElement = document.createElement("p");
+  weightElement.innerText = "weight: " + item.height;
   //create element for type in modal content
-  let typesElement = document.createElement("<p> "+ "types : " + itemTypes + "</p>");
+  let typesElement = document.createElement("p");
+  typesElement.innerText = "type: " + item.types;
 
   modalTitle.append(nameElement);
   modalBody.append(imageElementFront);
