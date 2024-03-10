@@ -149,7 +149,7 @@ function showModal(item) {
   heightElement.innerText = "height: " + item.height;
   //create element for weight in modal cotent
   let weightElement = document.createElement("p");
-  weightElement.innerText = "weight: " + item.height;
+  weightElement.innerText = "weight: " + item.weight;
   //create element for type in modal content
   let typesElement = document.createElement("p");
   typesElement.innerText = "type: " + item.types;
