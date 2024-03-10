@@ -123,11 +123,11 @@ button.dataset.toggle = "modal";
 
   function showDetails(item) {
     pokemonRepository.loadDetails(item).then(function () {
-        showModal(item);
+        showModal(item.Name, item.imageUrl, item.height, item.weight, item.types);
     });
   }
 
-function showModal(item) {
+function showModal(itemName, itemImageUrl, itemHeight, itemWeight, itemTypes) {
   let modalBody = document.querySelector(".modal-body");
   let modalTitle = document.querySelector(".modal-title");
   let modalHeader = document.querySelector(".modal-header");
