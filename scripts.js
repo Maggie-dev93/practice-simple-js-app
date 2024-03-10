@@ -115,7 +115,7 @@ button.dataset.toggle = "modal";
       item.imageUrl = details.sprites.front_default;
       item.height = details.height;
       item.weight = details.weight;
-      item.types = details.types;
+      item.abilities = details.abilities;
     }).catch(function (e) {
       console.error(e);
     });
@@ -151,14 +151,14 @@ function showModal(item) {
   let weightElement = document.createElement("p");
   weightElement.innerText = "weight: " + item.weight;
   //create element for type in modal content
-  let typesElement = document.createElement("p");
-  typesElement.innerText = "type: " + item.types;
+  let abilitiesElement = document.createElement("p");
+  abilitiesElement.innerText = "abilities: " + item.abilities;
 
   modalTitle.append(nameElement);
   modalBody.append(imageElementFront);
   modalBody.append(heightElement);
   modalBody.append(weightElement);
-  modalBody.append(typesElement);
+  modalBody.append(abilitiesElement);
 }
 
   return {
