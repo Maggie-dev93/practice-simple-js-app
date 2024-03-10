@@ -158,7 +158,7 @@ function showModal(item) {
   modalBody.append(imageElementFront);
   modalBody.append(heightElement);
   modalBody.append(weightElement);
-  modalElement.append(typesElement);
+  modalBody.append(typesElement);
 }
 
   return {
