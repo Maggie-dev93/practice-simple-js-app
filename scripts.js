@@ -114,6 +114,7 @@ button.dataset.toggle = "modal";
       // Now we add the details to the item
       item.imageUrl = details.sprites.front_default;
       item.height = details.height;
+      item.weight = details.weight;
       item.types = details.types;
     }).catch(function (e) {
       console.error(e);
@@ -122,29 +123,29 @@ button.dataset.toggle = "modal";
 
   function showDetails(item) {
     pokemonRepository.loadDetails(item).then(function () {
-        showModal(item.name, item.height, item.imageUrl);
+        showModal(item.name, item.height, item.weight, item.imageUrl);
     });
   }
 
-function showModal(itemName, itemHeight, itemImageUrl) {
+function showModal(itemName, itemHeight, itemWeight, itemImageUrl) {
   let modalBody = document.querySelectorAll(".modal-Body");
   let modalTitle = document.querySelectorAll(".modal-title");
   let modalHeader = document.querySelectorAll(".modal-header");
   //clear exisiting content of the modal
   //modalHeader.empty();
-  modalTitle.innerHTML = "";
+  modalTitle.innerHtml = "";
   modalBody.innerHtml = "";
 
   //creating element for name in modal content
-  let nameElement = document.createElement("<h1>" + item.name + "</h1>");
+  let nameElement = document.createElement("<h1>" + itemName + "</h1>");
   //creating img in modal content
-  let imageElementFront = document.createElement('<img class="modal-img" style="width50%>');
+  let imageElementFront = document.createElement('<img class="modal-img" style="width50%" src=' + itemImageUrl + '>');
   //create element for height in modal content
-  let heightElement = document.createElement("<p>" + "height : " + item.height +"</p>");
+  let heightElement = document.createElement("<p>" + "height : " + itemHeight +"</p>");
   //create element for weight in modal cotent
-  let weightElement = document.createElement("<p>" + "weight : " + item.weight +"</p>");
+  let weightElement = document.createElement("<p>" + "weight : " + itemWeight +"</p>");
   //create element for type in modal content
-  let typesElement = document.createElement("<p> "+ "types : " + item.types + "</p>");
+  let typesElement = document.createElement("<p> "+ "types : " + itemTypes + "</p>");
 
   modalTitle.append(nameElement);
   modalBody.append(imageElementFront);
