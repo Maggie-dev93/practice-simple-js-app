@@ -155,13 +155,12 @@ function showModal(item) {
   let typesElement = document.createElement("p")
   //create a empty array to hold
   let abilityNames = []
-  item.abilities.map(function(elem){
+  item.abilities.forEach(function (elem){
     if(! elem.is_hidden){
       console.log(elem.ability.name);
       abilityNames.push(elem.ability.name);
     }
-  });
-  //for formatting if the number of abilityNames is greater than 1 then join (concatenate)
+  });  //for formatting if the number of abilityNames is greater than 1 then join (concatenate)
   //with a comma ", ".  Don't forget the space after the comma.
   //pokemon pidgeotto has two abilities
   let abilities_str = ""
