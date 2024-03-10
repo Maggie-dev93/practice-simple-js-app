@@ -153,6 +153,33 @@ function showModal(item) {
   //create element for type in modal content
   let abilitiesElement = document.createElement("p");
   abilitiesElement.innerText = "abilities: " + item.abilities;
+  //create empty array
+  let abilityNames = []
+  item.abilities.forEach(function (elem){
+    if(!elem.is_hidden){
+            console.log(elem.ability.name);
+      abilityNames.push(elem.ability.name);
+    }
+  });  
+  //for formatting if the number of abilityNames is greater than 1 then join (concatenate)
+  //with a comma ", ".  Don't forget the space after the comma.
+  //pokemon pidgeotto has two abilities
+  let abilities_str = ""
+  if(abilityNames.length > 1){
+    abilities_str = abilityNames.join(", ")
+  }
+  else{
+    //if there is just one abilityNames then just use that
+    if(abilityNames.length == 1) {
+      abilities_str = abilityNames[0]
+    }
+    //if there are no abilityNames then return None.
+    else{
+      abilities_str = "None"
+    }
+  }
+    
+  typesElement.innerText = "types : " + abilities_str;
 
   modalTitle.append(nameElement);
   modalBody.append(imageElementFront);
