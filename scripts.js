@@ -179,7 +179,7 @@ function showModal(item) {
     }
   }
     
-  typesElement.innerText = "types : " + abilities_str;
+  abilitiesElement.innerText = "types : " + abilities_str;
 
   modalTitle.append(nameElement);
   modalBody.append(imageElementFront);
