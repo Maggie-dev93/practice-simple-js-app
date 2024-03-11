@@ -26,9 +26,9 @@ function addListItem(pokemon) {
     button.classList.add("btn", "btn-primary", "button-class");
     button.innerText = pokemon.name;
     
-// Set data-target and data-toggle attributes using dot notation
-button.dataset.target = "#exampleModal";
-button.dataset.toggle = "modal";
+    // Set data-target and data-toggle attributes using dot notation
+    button.setAttribute("data-target", "#exampleModal");
+    button.setAttribute("data-toggle", "modal");
 
     listpokemon.appendChild(button);
     pokemonList.appendChild(listpokemon);
