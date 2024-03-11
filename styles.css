@@ -24,6 +24,12 @@ h1 {
     text-align: center;
 }
 
+.pokemon-item {
+  width: 200px; /* Set the width of each item */
+  height: 200px; /* Set the height of each item */
+  margin-bottom: 20px; /* Add margin between items */
+}
+
 .button-class {
     background-color: #4caf50; /* Green */
     border: none;
