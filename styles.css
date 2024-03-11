@@ -24,7 +24,7 @@ h1 {
     text-align: center;
 }
 
-.button-class {
+/* .button-class {
     background-color: #4caf50; /* Green */
     border: none;
     color: white;
@@ -43,7 +43,7 @@ h1 {
 
 }
 
-/* #modal-container {
+ #modal-container {
     position: fixed;
     padding: 20px;
     box-sizing: border-box;
