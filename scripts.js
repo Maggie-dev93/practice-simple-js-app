@@ -68,6 +68,13 @@ document.querySelector("form").addEventListener("submit", function(event) {
   }
 });
 
+  document.getElementById("searchInput").addEventListener("keypress", function(event) {
+      // Check if the key pressed is 'Enter' (key code 13)
+      if (event.key === "Enter") {
+        event.preventDefault(); // Prevent the default action of the 'Enter' key (submitting the form)
+        document.getElementById("myForm").submit(); // Manually submit the form
+      }
+    });
 
   function loadDetails(item) {
     let url = item.detailsUrl;
