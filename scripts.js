@@ -54,6 +54,19 @@ function addListItem(pokemon) {
       console.error(e);
     })
   }
+  
+document.querySelector("form").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent the form from submitting and refreshing the page
+  let searchQuery = document.querySelector(".form-control").value.toLowerCase(); // Get the search query from the input field and convert to lowercase for case-insensitive comparison
+  let foundPokemon = pokemonRepository.getAll().find(function(pokemon) {
+    return pokemon.name.toLowerCase() === searchQuery; // Check if the name of the Pokemon matches the search query
+  });
+  if (foundPokemon) {
+    pokemonRepository.showDetails(foundPokemon); // Show modal for the found Pokemon
+  } else {
+    alert("Pokemon not found!"); // Display an alert if the Pokemon is not found
+  }
+});
 
   function loadDetails(item) {
     let url = item.detailsUrl;
