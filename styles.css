@@ -43,7 +43,7 @@ h1 {
 
 }
 
-#modal-container {
+/* #modal-container {
     position: fixed;
     padding: 20px;
     box-sizing: border-box;
@@ -105,4 +105,4 @@ h1 {
 .pokemon-list li {
     margin-bottom: 10px;
     /* You can add additional styling for list items */
-}
+} */
