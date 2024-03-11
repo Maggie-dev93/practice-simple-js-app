@@ -68,6 +68,14 @@ document.querySelector("form").addEventListener("submit", function(event) {
   }
 });
 
+  // Add event listener for Enter key press event on the input field
+document.querySelector(".form-control").addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault(); // Prevent the default form submission
+    document.querySelector("form").dispatchEvent(new Event("submit")); // Trigger the form submission event
+  }
+});
+  
   function loadDetails(item) {
     let url = item.detailsUrl;
     return fetch(url).then(function (response) {
